@@ -25,6 +25,6 @@ import { UserResolver } from './resolvers/resolver.user';
   apolloServer.applyMiddleware({ app, cors: false ,path:"/api/v1"});
 
   app.listen(4000, () => {
-    console.log("express server started");
+    console.log("server on 🚀");
   });
 })();
