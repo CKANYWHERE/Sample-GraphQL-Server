@@ -30,9 +30,9 @@
     "graphql-import": "^0.4.3"
   },
   "scripts": {
-    "start": "node 'dist/server.js'",
-    "build": "tsc -p . && ncp src/schema dist/schema",
-    "dev": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,graphql"
+    "start": "node 'dist/app.js'",
+    "build": "tsc --build .",
+    "dev": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts"
   },
   "keywords": [],
   "author": "",
