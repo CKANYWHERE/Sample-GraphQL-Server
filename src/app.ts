@@ -1,19 +1,24 @@
 
 import "reflect-metadata";
-import { createConnection } from "typeorm";
+import { createConnection, useContainer } from "typeorm";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { HelloWorldResolver } from "./resolvers/HellowordResolver";
 import compression from "compression";
+import * as typeorm from "typeorm";
 //import { MovieResolver } from "./resolvers/MovieResolver";
+import { Container } from "typedi";
 import { UserResolver } from './resolvers/resolver.user';
+
+useContainer(Container);
+typeorm.useContainer(Container);
 
 (async () => {
   const app = express();
   app.use(compression()); 
 
-  await createConnection();
+  await createConnection("gamepartner");
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({

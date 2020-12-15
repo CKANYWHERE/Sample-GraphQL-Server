@@ -1,11 +1,8 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
-import {  getConnection, getConnectionManager, getCustomRepository, getManager } from "typeorm";
+import { getConnectionManager } from "typeorm";
 import { User } from '../model/model.user';
 import { UserRepository } from '../repository/repo.user';
 import { UserInput } from './InputType/user.inputType';
-
-// const manager = getConnectionManager().get("gamepartner");
-// const repo = manager.getCustomRepository(UserRepository);
 
 @Resolver()
 export class UserResolver{
@@ -13,7 +10,9 @@ export class UserResolver{
     @Mutation(() => Boolean)
     async createUser(@Arg("user", () => UserInput) user:UserInput){
         try{
-            await User.insert(user);
+            const manager = getConnectionManager().get("gamepartner")
+            const repo = manager.getCustomRepository(UserRepository)
+            await repo.insert(user);
             return true
         }
         catch(err){
@@ -24,7 +23,9 @@ export class UserResolver{
 
     @Query(() => [User])
     async user(){
-        return await User.find()
+        const manager = getConnectionManager().get("gamepartner")
+        const repo = manager.getCustomRepository(UserRepository)
+        return await repo.findAllUser()
     }
 
 }

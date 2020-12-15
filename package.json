@@ -7,6 +7,7 @@
     "@types/bluebird": "^3.5.30",
     "@types/validator": "^12.0.1",
     "apollo-server-express": "^2.11.0",
+    "class-validator": "^0.12.2",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -17,7 +18,9 @@
     "reflect-metadata": "^0.1.13",
     "ts-node": "^8.6.2",
     "type-graphql": "^1.1.1",
+    "typedi": "^0.8.0",
     "typeorm": "^0.2.29",
+    "typeorm-typedi-extensions": "^0.2.3",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
@@ -30,9 +33,9 @@
     "graphql-import": "^0.4.3"
   },
   "scripts": {
-    "start": "node 'dist/app.js'",
+    "server": "node 'dist/app.js'",
     "build": "tsc --build .",
-    "dev": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts"
+    "start": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,json"
   },
   "keywords": [],
   "author": "",

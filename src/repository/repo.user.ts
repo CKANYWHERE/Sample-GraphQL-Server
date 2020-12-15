@@ -2,7 +2,7 @@ import { EntityRepository, Repository } from "typeorm";
 import { User } from '../model/model.user';
 import { UserInput } from "../resolvers/InputType/user.inputType";
 
-
+@EntityRepository(User)
 export class UserRepository extends Repository<User>{
 
     /*
