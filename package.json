@@ -35,7 +35,8 @@
   "scripts": {
     "server": "node 'dist/app.js'",
     "build": "tsc --build .",
-    "start": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,json"
+    "start": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,json",
+    "debug": "nodemon --inspect app.ts"
   },
   "keywords": [],
   "author": "",
