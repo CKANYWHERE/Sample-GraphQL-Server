@@ -9,9 +9,7 @@ import { UserInput } from './InputType/user.inputType';
 export class UserResolver{
 
     constructor(
-        //private readonly manager = getConnectionManager().get("gamepartner"),
         private readonly repo = getConnectionManager().get("gamepartner").getCustomRepository(UserRepository)
-        //@InjectRepository(UserRepository) private readonly repo:UserRepository
     ){}
 
    
@@ -30,8 +28,6 @@ export class UserResolver{
 
     @Query(() => [User])
     async user(){
-        //const manager = getConnectionManager().get("gamepartner")
-        //const repo = manager.getCustomRepository(UserRepository)
         return await this.repo.findAllUser()
     }
 
