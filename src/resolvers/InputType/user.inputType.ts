@@ -31,3 +31,13 @@ export class UserInput{
     phoneNumber!:string;
 
 }
+
+@InputType()
+export class LoginInput{
+
+    @Field()
+    userId:string;
+
+    @Field()
+    password:string;
+}

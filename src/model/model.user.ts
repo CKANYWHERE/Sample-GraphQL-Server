@@ -44,4 +44,8 @@ export class User extends BaseEntity{
     @Field()
     @Column({name:"RegisterDate",default:'now()'})
     registerDate!:Date;
+
+    @Column({name:"TokenVersion",default:'0'})
+    tokenVersion!:number;
+
 }
