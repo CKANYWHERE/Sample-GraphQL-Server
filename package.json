@@ -35,6 +35,7 @@
     "@types/graphql-depth-limit": "^1.1.2",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^13.9.1",
+    "@types/uuid": "^8.3.0",
     "graphql-depth-limit": "^1.1.0",
     "graphql-import": "^0.4.3"
   },
@@ -42,6 +43,7 @@
     "server": "node 'dist/app.js'",
     "build": "tsc --build .",
     "start": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,json",
+    "cluster": "nodemon 'src/app_cluster.ts' --exec 'ts-node' src/app_cluster.ts -e ts,json",
     "debug": "nodemon --inspect src/app.ts"
   },
   "keywords": [],
