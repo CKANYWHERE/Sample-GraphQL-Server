@@ -40,6 +40,8 @@
     "graphql-import": "^0.4.3"
   },
   "scripts": {
+    "pm2":"pm2 start start.json",
+    "pm2stop":"pm2 stop app",
     "server": "node 'dist/app.js'",
     "build": "tsc --build .",
     "start": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,json",

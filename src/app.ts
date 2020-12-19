@@ -22,6 +22,11 @@ import bodyParser from "body-parser";
   app.use(bodyParser.urlencoded({ extended: true })); 
   app.use(router)
 
+  const options = {
+    host: "0.0.0.0",
+    port: 4000
+  }
+  
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
       resolvers: [UserResolver]
@@ -31,7 +36,7 @@ import bodyParser from "body-parser";
 
   apolloServer.applyMiddleware({ app, cors: false ,path:"/api/v1"});
 
-  app.listen(4000, () => {
+  app.listen(options, () => {
     console.log("server on 🚀");
   });
 })();

@@ -3,7 +3,10 @@
         [{ 
             "script" : "src/app.ts", 
             "instances" : "max", 
-            "exec_mode" : "cluster" 
+            "exec_mode" : "cluster",
+            "env":{
+                "PORT":4000
+            }
         }]
 
 }
